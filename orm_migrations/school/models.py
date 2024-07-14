@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Teacher(models.Model):
+    id = models.BigIntegerField(unique=True, primary_key=True, serialize=True)
     name = models.CharField(max_length=30, verbose_name='Имя')
     subject = models.CharField(max_length=10, verbose_name='Предмет')
 
@@ -14,8 +15,9 @@ class Teacher(models.Model):
 
 
 class Student(models.Model):
+    id = models.BigIntegerField(unique=True, primary_key=True, serialize=True)
     name = models.CharField(max_length=30, verbose_name='Имя')
-    teacher = models.ManyToManyField(Teacher, related_name="students", verbose_name="Учителя")
+    teacher = models.ManyToManyField(Teacher, related_name="student", verbose_name="Учителя")
     group = models.CharField(max_length=10, verbose_name='Класс')
 
     class Meta:

@@ -73,11 +73,11 @@ WSGI_APPLICATION = 'website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'netology_phones',
+        'NAME': 'netology_2',
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': 'alcatel',
+        'PASSWORD': '1402',
     }
 }
 
@@ -127,6 +127,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 try:
     from .settings_local import *
